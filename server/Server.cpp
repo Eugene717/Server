@@ -83,6 +83,7 @@ void Server::CheckDisconnect()
 
 					m_pImpl->m_selector.remove(*(*i)->m_socket);
 					(*i)->m_socket->disconnect();
+					delete* i;
 					m_pImpl->m_clients.erase(i);
 					break;
 				}
@@ -192,6 +193,7 @@ void Server::ExitGame()
 			(*i)->m_clients.first->m_socket->disconnect();
 			(*i)->m_clients.second->m_socket->disconnect();
 
+			delete *i;
 			m_pImpl->m_games.erase(i);
 			break;
 		}
