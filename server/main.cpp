@@ -1,5 +1,3 @@
-#include <SFML/Network.hpp>
-#include <vector>
 #include "Server.h"
 
 int main()
